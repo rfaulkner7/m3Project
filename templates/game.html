@@ -1,0 +1,34 @@
+
+<nav class="navbar navbar-dark"></nav>
+
+<head>Space Trader Game</head>
+<br></br>
+<body bgcolor="#FFDC00" style="text-align:center">
+  <form method="POST">
+    <label>Player Name: </label>
+    {{ form.name_field(placeholder="Enter Player Name") }}
+    <br />
+    <br />
+    <label>Difficulty: </label>
+    {{ form.select_field() }}
+    <br />
+    <br />
+    <label>Fighter Level: </label>
+    {{ form.fighter_field() }}
+    <br />
+    <label>Pilot Level: </label>
+    {{ form.pilot_field() }}
+    <br />
+    <label>Merchant Level: </label>
+    {{ form.merchant_field() }}
+    <br />
+    <label>Engineer Level: </label>
+    {{ form.engineer_field() }}
+    <br />
+    <br />
+    {{ form.submit() }}
+    <br />
+    <label>{{ status }}</label>
+  </form>
+</body>
+

@@ -43,11 +43,11 @@ def initialize():
         except:
             pilot = 0
         try: 
-            merchant = form.merchant_field.data
+            merchant = int(form.merchant_field.data)
         except:
             merchant = 0
         try:
-            engineer = form.engineer_field.data
+            engineer = int(form.engineer_field.data)
         except:
             engineer = 0
 
@@ -55,17 +55,17 @@ def initialize():
 
         if difficulty == "easy" and total == 16 :
             credits = 1000
-            return redirect("http://127.0.0.1:8080/char", code=302)
+            return redirect("http://127.0.0.1:8080/display", code=302)
         elif difficulty == "medium" and total == 12 :
             credits = 500
-            return redirect("http://127.0.0.1:8080/char", code=302)
+            return redirect("http://127.0.0.1:8080/display", code=302)
         elif difficulty == "hard" and total == 8 :
             credits = 100
-            return redirect("http://127.0.0.1:8080/char", code=302)
+            return redirect("http://127.0.0.1:8080/display", code=302)
         else:
             return render_template("game.html", form = form, status = "incorrect point allocation!")
     else: 
-        return render_template("game.html", form = form)
+        return render_template("game.html", form = form, status = '')
 
 @app.route('/display', methods=['GET', 'POST'])
 def display():
